@@ -1,0 +1,13 @@
+{
+  "name": "metro-plugin-lit-sdk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/snowball-tools/metro-plugin-lit-sdk",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-native": "^0.72.6",
+    "react-native-quick-crypto": "^0.6.1",
+    "stream-browserify": "^3.0.0"
+  }
+}
