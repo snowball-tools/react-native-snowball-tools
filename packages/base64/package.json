@@ -1,5 +1,5 @@
 {
-  "name": "react-native-base64",
+  "name": "@snowballtools/react-native-base64",
   "version": "1.0.0",
   "description": "A polyfill used to add btoa() and atob() to the global scope.",
   "main": "dist",
