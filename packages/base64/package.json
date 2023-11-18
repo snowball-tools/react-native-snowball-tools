@@ -1,0 +1,24 @@
+{
+  "name": "react-native-base64",
+  "version": "1.0.0",
+  "description": "A polyfill used to add btoa() and atob() to the global scope.",
+  "main": "dist",
+  "repository": "https://github.com/snowball-tools/react-native-base64",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "base-64": "^0.1.0"
+  },
+  "scripts": {
+    "build": "babel src --out-dir dist"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.3",
+    "@babel/node": "^7.22.19",
+    "@babel/preset-env": "^7.23.3"
+  },
+  "optionalDependencies": {
+    "react-native-quick-base64": "^2.0.7"
+  }
+}
