@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A polyfill used to add btoa() and atob() to the global scope.",
   "main": "dist",
-  "repository": "https://github.com/snowball-tools/react-native-base64",
+  "repository": "https://github.com/snowball-tools/react-native-snowball-tools",
   "license": "MIT",
   "private": false,
   "dependencies": {
