@@ -12,12 +12,6 @@ module.exports = function (config) {
 	platform,
 	moduleNameLookups,
   ) => {
-	if (moduleName === "@lit-protocol/nacl") {
-	  return {
-		type: "sourceFile",
-		filePath: path.resolve(__dirname, "nacl.js"),
-	  };
-	}
 	// Restrict to rewriting 'webcrypto.js' only when required by 'jose'
 	if (
 	  moduleName.includes("webcrypto.js") &&
