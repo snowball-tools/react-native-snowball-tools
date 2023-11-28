@@ -4,9 +4,9 @@
     "private": true,
     "license": "MIT",
     "scripts": {
-        "build": "yarn workspace build"
+        "build": "yarn workspaces run build"
     },
     "workspaces": [
-        "packages/*"
+        "packages/@snowballtools/*"
     ]
 }

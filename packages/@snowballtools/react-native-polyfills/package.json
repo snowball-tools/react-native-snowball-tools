@@ -1,11 +1,20 @@
 {
   "name": "@snowballtools/react-native-polyfills",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist",
   "license": "MIT",
   "dependencies": {
-    "@snowballtools/react-native-base64": "workspace:*",
+    "@snowballtools/react-native-base64": "^1.0.0",
     "fastestsmallesttextencoderdecoder": "^1.0.22"
+  },
+  "scripts": {
+    "build": "babel src --out-dir dist"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.3",
+    "@babel/node": "^7.22.19",
+    "@babel/preset-env": "^7.23.3"
   },
   "optionalDependencies": { 
     "react-native-get-random-values": "^1.9.0"
