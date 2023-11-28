@@ -1,9 +1,15 @@
 const path = require("path");
 
 module.exports = function (config) {
-  config.resolver.extraNodeModules.crypto = require.resolve(
-	"react-native-quick-crypto",
-  );
+  try {
+	config.resolver.extraNodeModules.crypto = require.resolve(
+		"react-native-quick-crypto",
+	);
+  } catch {
+	config.resolver.extraNodeModules.crypto = require.resolve(
+		"crypto-browserify",
+	);
+  }
   config.resolver.extraNodeModules.stream =
 	require.resolve("stream-browserify");
   config.resolver.resolveRequest = (
