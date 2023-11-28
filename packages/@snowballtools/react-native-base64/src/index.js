@@ -6,4 +6,5 @@ try {
     const { encode, decode } = require("base-64");
     global.btoa = encode;
     global.atob = decode;
+    console.log("Using polyfill for base64, install react-native-quick-base64 for better performance.");
 }
