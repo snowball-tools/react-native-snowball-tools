@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@snowballtools/react-native-base64": "^1.0.0",
+    "@snowballtools/react-native-base64": "workspace:*",
     "text-encoding": "^0.7.0"
   },
   "optionalDependencies": { 
