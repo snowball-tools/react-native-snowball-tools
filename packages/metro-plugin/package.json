@@ -1,8 +1,8 @@
 {
-  "name": "@snowballtools/metro-plugin-lit-sdk",
+  "name": "@snowballtools/metro-plugin",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/snowball-tools/metro-plugin-lit-sdk",
+  "repository": "https://github.com/snowball-tools/react-native-snowball-tools",
   "license": "MIT",
   "peerDependencies": {
     "react": "^18.2.0",
