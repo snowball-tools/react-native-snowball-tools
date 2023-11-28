@@ -7,7 +7,7 @@ try {
 
 // General polyfills
 import '@snowballtools/react-native-base64';
-import 'text-encoding';
+import 'fastestsmallesttextencoderdecoder';
 
 // Polyfills specific to the LIT protocol's SDKs
 import { EventEmitter } from 'eventemitter3';
