@@ -1,9 +1,17 @@
-import 'react-native-get-random-values';
-import 'react-native-base64';
+// Optional native polyfills
+try {
+    require('react-native-get-random-values');
+} catch {
+    // ignore
+}
+
+// General polyfills
+import '@snowballtools/react-native-base64';
 import 'text-encoding';
+
+// Polyfills specific to the LIT protocol's SDKs
 import { EventEmitter } from 'eventemitter3';
 
-// LIT: assumes existence of a DOM currently
 Event = class {
     constructor(name) {
       this.name = name;
