@@ -10,17 +10,19 @@ import '@snowballtools/react-native-base64';
 import 'fastestsmallesttextencoderdecoder';
 
 // Polyfills specific to the LIT protocol's SDKs
-import { EventEmitter } from 'eventemitter3';
-
-Event = class {
-    constructor(name) {
-      this.name = name;
-    }
-};
-  
-const emitter = new EventEmitter();
-document = {
-    dispatchEvent: (event) => {
+try {
+    const { EventEmitter } = require('eventemitter3');
+    Event = class {
+        constructor(name) {
+        this.name = name;
+        }
+    };
+    const emitter = new EventEmitter();
+    document = {
+        dispatchEvent: event => {
         emitter.emit(event.name);
-    },
-};
+        }
+    };
+} catch {
+// ignore
+}
