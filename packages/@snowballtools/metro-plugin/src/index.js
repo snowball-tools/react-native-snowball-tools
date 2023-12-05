@@ -29,6 +29,13 @@ module.exports = function (config) {
         filePath: path.resolve(__dirname, "nacl.js"),
       };
     }
+	// Restrict to rewriting 'micro-ftch.js' only when required by 'micro-ftch'
+	if (moduleName === "micro-ftch") {
+		  return {
+			type: "sourceFile",
+			filePath: path.resolve(__dirname, "micro-ftch.js"),
+	 	 };	
+	}
     // Fall back to Metro's default resolver for all other modules
     return context.resolveRequest(
       context,

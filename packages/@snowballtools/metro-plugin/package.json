@@ -1,6 +1,6 @@
 {
   "name": "@snowballtools/metro-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist",
   "repository": "https://github.com/snowball-tools/react-native-snowball-tools",
   "license": "MIT",
