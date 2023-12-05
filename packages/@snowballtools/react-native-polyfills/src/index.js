@@ -1,11 +1,5 @@
-// Optional native polyfills
-try {
-    require('react-native-get-random-values');
-} catch {
-    // ignore
-}
-
 // General polyfills
+import 'react-native-get-random-values';
 import '@snowballtools/react-native-base64';
 import 'fastestsmallesttextencoderdecoder';
 
