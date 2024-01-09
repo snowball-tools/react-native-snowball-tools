@@ -1,6 +1,6 @@
 {
   "name": "@snowballtools/metro-plugin",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "dist",
   "repository": "https://github.com/snowball-tools/react-native-snowball-tools",
   "license": "MIT",
@@ -14,7 +14,6 @@
     "@babel/preset-env": "^7.23.3"
   },
   "dependencies": {
-    "crypto-browserify": "^3.12.0",
     "react-native-quick-crypto": "^0.6.1",
     "stream-browserify": "^3.0.0"
   },
