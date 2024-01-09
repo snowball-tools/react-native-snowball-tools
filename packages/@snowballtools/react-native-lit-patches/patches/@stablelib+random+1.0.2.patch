@@ -1,0 +1,84 @@
+diff --git a/node_modules/@stablelib/random/lib/source/system.js b/node_modules/@stablelib/random/lib/source/system.js
+index f25cb61..2b13a1e 100644
+--- a/node_modules/@stablelib/random/lib/source/system.js
++++ b/node_modules/@stablelib/random/lib/source/system.js
+@@ -1,36 +1,51 @@
+ "use strict";
++
++import * as Random from 'expo-crypto';
++
+ // Copyright (C) 2016 Dmitry Chestnykh
+ // MIT License. See LICENSE file for details.
+-Object.defineProperty(exports, "__esModule", { value: true });
++Object.defineProperty(exports, "__esModule", {
++  value: true
++});
+ exports.SystemRandomSource = void 0;
+ const browser_1 = require("./browser");
+ const node_1 = require("./node");
+ class SystemRandomSource {
+-    constructor() {
+-        this.isAvailable = false;
+-        this.name = "";
+-        // Try browser.
+-        this._source = new browser_1.BrowserRandomSource();
+-        if (this._source.isAvailable) {
+-            this.isAvailable = true;
+-            this.name = "Browser";
+-            return;
+-        }
+-        // If no browser source, try Node.
+-        this._source = new node_1.NodeRandomSource();
+-        if (this._source.isAvailable) {
+-            this.isAvailable = true;
+-            this.name = "Node";
+-            return;
+-        }
+-        // No sources, we're out of options.
+-    }
+-    randomBytes(length) {
+-        if (!this.isAvailable) {
+-            throw new Error("System random byte generator is not available.");
+-        }
+-        return this._source.randomBytes(length);
+-    }
++  constructor() {
++	this.isAvailable = false;
++	this.name = "";
++	// Try browser.
++	this._source = new browser_1.BrowserRandomSource();
++	if (this._source.isAvailable) {
++	  this.isAvailable = true;
++	  this.name = "Browser";
++	  return;
++	}
++	// If no browser source, try Node.
++	this._source = new node_1.NodeRandomSource();
++	if (this._source.isAvailable) {
++	  this.isAvailable = true;
++	  this.name = "Node";
++	  return;
++	}
++	this._source = {
++	  randomBytes: length => {
++		return Random.getRandomBytes(length);
++	  }
++	};
++	if (this._source) {
++	  this.isAvailable = true;
++	  this.name = "Expo";
++	  return;
++	}
++	// No sources, we're out of options.
++  }
++
++  randomBytes(length) {
++	if (!this.isAvailable) {
++	  throw new Error("System random byte generator is not available.");
++	}
++	return this._source.randomBytes(length);
++  }
+ }
+ exports.SystemRandomSource = SystemRandomSource;
+-//# sourceMappingURL=system.js.map
+\ No newline at end of file

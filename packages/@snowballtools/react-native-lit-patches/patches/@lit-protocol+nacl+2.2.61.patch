@@ -1,0 +1,24 @@
+diff --git a/node_modules/@lit-protocol/nacl/src/lib/nacl.js b/node_modules/@lit-protocol/nacl/src/lib/nacl.js
+index 03ce7c9..95fe725 100644
+--- a/node_modules/@lit-protocol/nacl/src/lib/nacl.js
++++ b/node_modules/@lit-protocol/nacl/src/lib/nacl.js
+@@ -1164,18 +1164,7 @@ _nacl.setPRNG = function (fn) {
+         });
+     }
+     else if (typeof require !== 'undefined') {
+-        // Node.js.
+-        // this nodeRequire hack was added by Chris Cassano
+-        // because webpack was complaining that "you might try to require crypto and that's not bundled" by webpack automatically anymore.
+-        // but this code path will only run on nodejs so it's a non-issue.
+-        // thus we have this hack to make webpack happy.
+-        const nodeVer = typeof process !== 'undefined' && process.versions?.node;
+-        const nodeRequire = nodeVer
+-            ? typeof __webpack_require__ === 'function'
+-                ? __non_webpack_require__
+-                : require
+-            : undefined;
+-        crypto = nodeRequire('crypto');
++        crypto = require('crypto');
+         if (crypto && crypto.randomBytes) {
+             _nacl.setPRNG(function (x, n) {
+                 var i, v = crypto.randomBytes(n);

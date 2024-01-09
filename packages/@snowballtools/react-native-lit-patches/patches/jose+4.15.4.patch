@@ -1,0 +1,14 @@
+diff --git a/node_modules/jose/dist/browser/runtime/random.js b/node_modules/jose/dist/browser/runtime/random.js
+index e8e4611..f5e11d6 100644
+--- a/node_modules/jose/dist/browser/runtime/random.js
++++ b/node_modules/jose/dist/browser/runtime/random.js
+@@ -1,2 +1,6 @@
+-import crypto from './webcrypto.js';
+-export default crypto.getRandomValues.bind(crypto);
++const c = require('crypto');
++module.exports = {
++  getRandomValues: c.getRandomValues || (() => {
++    console.log("getRandomValues is not supported")
++  })
++};
+\ No newline at end of file
