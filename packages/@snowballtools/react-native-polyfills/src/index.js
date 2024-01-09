@@ -3,20 +3,24 @@ import 'react-native-get-random-values';
 import '@snowballtools/react-native-base64';
 import 'fastestsmallesttextencoderdecoder';
 
-// Polyfills specific to the LIT protocol's SDKs
-try {
-    const { EventEmitter } = require('eventemitter3');
-    Event = class {
-        constructor(name) {
-        this.name = name;
-        }
-    };
-    const emitter = new EventEmitter();
-    document = {
-        dispatchEvent: event => {
-        emitter.emit(event.name);
-        }
-    };
-} catch {
-// ignore
+// LIT specific polyfills
+const memory = {}
+global.localStorage = {
+	setItem: (key, value) => {
+		memory[key] = value;
+	},
+	getItem: (key) => {
+		return memory[key];
+	}
 }
+
+class Event {
+  constructor(name) {
+	this.name = name;
+  }
+}
+
+global.Event = Event
+global.document = {
+  dispatchEvent: (event) => { console.log(event) }
+};
