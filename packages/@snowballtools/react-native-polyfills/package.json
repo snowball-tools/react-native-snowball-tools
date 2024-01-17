@@ -3,6 +3,7 @@
   "version": "1.0.4",
   "main": "dist",
   "license": "MIT",
+  "private": false,
   "dependencies": {
     "@snowballtools/react-native-base64": "^1.0.0",
     "fastestsmallesttextencoderdecoder": "^1.0.22",

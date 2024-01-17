@@ -4,6 +4,7 @@
   "main": "dist",
   "repository": "https://github.com/snowball-tools/react-native-snowball-tools",
   "license": "MIT",
+  "private": false,
   "scripts": {
     "build": "babel src --out-dir dist"
   },
